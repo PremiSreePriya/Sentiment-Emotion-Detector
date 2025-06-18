@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sentiment & Emotion Detector</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url("https://www.parents.com/thmb/FmihFthdF62Ou0EoUlRI7IKeb4k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-884378360-2000-6d8b0cd7ce0c4daf96ed15c80e3bfc16.jpg") no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #000000;
+            text-shadow: 1px 1px 3px #000;
+            margin: 30px 0 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .button-group button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+            color: white;
+        }
+
+        .button-group button[name="action"][value="analyze"] {
+            background-color: #e71867;
+        }
+
+        .button-group button[name="action"][value="analyze"]:hover {
+            background-color: #c91558;
+        }
+
+        .button-group button[name="action"][value="clear"] {
+            background-color: #6c757d;
+        }
+
+        .button-group button[name="action"][value="clear"]:hover {
+            background-color: #5a6268;
+        }
+
+        .result-box {
+            background-color: #b8e0d0;
+            padding: 25px;
+            border-radius: 12px;
+            width: 350px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .result-box h2, .result-box h3, .result-box p {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧠 Sentiment & Emotion Detector</h1>
+
+    <div class="container">
+        <form method="post">
+           <input type="text" name="text" placeholder="Type your sentence..." value="{{ user_input }}" required>
+            <div class="button-group">
+                <button type="submit" name="action" value="analyze">Analyze</button>
+                <button type="submit" name="action" value="clear">Clear</button>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <h2>Sentiment: {{ result.sentiment }}</h2>
+            <h2>Emotion: {{ result.emotion }}</h2>
+            <h3>Confidence Score: {{ result.score }}</h3>
+            <p><strong>Suggestion:</strong> {{ result.suggestion }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
