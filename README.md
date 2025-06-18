@@ -1,31 +1,45 @@
 # Sentiment-Emotion-Detector
 A Flask-based web application that analyzes a single sentence to detect sentiment (positive/negative) and emotion (joy, sadness, anger, etc.) using Hugging Face Transformers, with real-time mental wellness suggestions.
 
-🔍 What It Does
+✨FEATURES
 
-Identifies Sentiment: Positive or Negative
+   💬Identifies Sentiment: Positive or Negative
 
-Detects Emotion: Joy, Sadness, Anger, Fear, Love, or Surprise
+   🔍Detects Emotion: Joy, Sadness, Anger, Fear, Love, or Surprise
 
-Shows confidence score and a helpful suggestion
+   📊Shows confidence score and a helpful suggestion
 
-🤖 Models Used
+🤖MODELS USED
 
-Sentiment: distilbert-base-uncased-finetuned-sst-2-english
+🔗Sentiment: distilbert-base-uncased-finetuned-sst-2-english
 
-Emotion: j-hartmann/emotion-english-distilroberta-base (requires PyTorch)
+🔗Emotion: j-hartmann/emotion-english-distilroberta-base (requires PyTorch)
 
-⚙️ Tech Stack
+⚙️TECH STACK
 
-Flask – for the web app
+🔁Flask – for the web app
 
-Transformers – for NLP models
+🤗Transformers – for NLP models
 
-Torch (PyTorch) – required backend for the emotion model
+🔥 Torch (PyTorch) – required backend for the emotion model
 
-HTML&CSS – for UI templates
+🖥 HTML&CSS – for UI templates
 
-✅ Sample Result
+🚀 HOW TO RUN THE APPLICATION
+1. 🔧 Install Requirements
+   
+   pip install flask transformers torch
+
+2. ▶️ Start the App
+
+   python app.py
+   
+3. 🌐 Access in Browser
+
+   Open your browser and go to:
+http://127.0.0.1:5000
+
+✅ SAMPLE RESULT
 
 Input: I feel really low and anxious.
 
